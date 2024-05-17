@@ -1,0 +1,47 @@
+# This is an example to install RedHat AMQ Broker Operator
+#
+# To have it working you need to have the redhat operator catalog installed on your cluster
+# and the you need to have your cluster configured with credentials to install images from
+# registry.redhat.io
+
+namespace:
+  # namespace where the operator will be installed
+  name: amq-broker-operator-olm
+
+operatorGroup:
+  # skip the operator group deploy if false
+  deploy: true
+  # operator group name
+  name: amq-broker-operator
+
+  selector:
+    # do not set selector matchLabels if false
+    enabled: true
+    # A list of maps with the labels
+    matchLabels:
+      - name: olm-operator-installer/managed-by
+        value: "{{ .Values.subscription.name }}"
+
+subscription:
+  # subscription name
+  name: amq-broker-operator-olm-sub
+
+  # channel name
+  channel: 7.11.x
+
+  # operator package name
+  operatorName: amq-broker-rhel8
+
+  # catalog name from which the operator will be installed
+  source: redhat-operators-catalog
+
+  # catalog namespace
+  sourceNamespace: olm
+
+  # install plan approval type
+  installPlanApproval: Automatic
+  
+  # the initial version of the operator to be installed
+  # if empty it will not be used in the subscription 
+  startingCSV: ""
+

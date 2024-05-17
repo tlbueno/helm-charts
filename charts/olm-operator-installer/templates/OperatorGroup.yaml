@@ -1,0 +1,16 @@
+{{- if .Values.operatorGroup.deploy }}
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+  name: {{ .Values.operatorGroup.name }}
+  namespace: {{ .Values.namespace.name }}
+spec:
+{{- if .Values.operatorGroup.selector.enabled }}
+  selector:
+    matchLabels:
+    {{- range .Values.operatorGroup.selector.matchLabels }}
+      {{ .name }}: {{ tpl .value $ }}
+    {{- end }}
+{{- end }}
+{{- end }}
+
