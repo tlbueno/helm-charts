@@ -12,12 +12,12 @@ Check [README.md](../../README.md) for repo installation details
 
 To install the chart, ie:
 ```sh
-helm install my-toolbox-chart tlbueno-repo/toolbox
+helm install my-toolbox-chart tlbueno/toolbox
 ```
 
 You may override the default values below by creating a yaml file with one or more entries and use it in helm command, ie:
 ```sh
-helm install my-toolbox-chart -f ./my-values.yaml tlbueno-repo/toolbox
+helm install my-toolbox-chart -f ./my-values.yaml tlbueno/toolbox
 ```
 
 Default values:

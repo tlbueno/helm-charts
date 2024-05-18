@@ -15,12 +15,12 @@ Check [README.md](../../README.md) for repo installation details
 
 To install the chart, ie:
 ```sh
-helm install my-operator-chart tlbueno-repo/olm-operator-installer
+helm install my-operator-chart tlbueno/olm-operator-installer
 ```
 
 You may override the default values below by creating a yaml file with one or more entries and use it in helm command, ie:
 ```sh
-helm install my-operator-chart -f ./my-values.yaml tlbueno-repo/olm-operator-installer
+helm install my-operator-chart -f ./my-values.yaml tlbueno/olm-operator-installer
 ```
 
 Default values:
