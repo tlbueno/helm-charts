@@ -11,4 +11,15 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/olm-operator-installer-0.1.0/olm-operator-installer-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-18T15:02:05.657713894Z"
+  toolbox:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-05-18T16:45:44.790373859Z"
+    description: A Helm chart to deploy a pod with a toolbox image
+    digest: bcbe9a031f437834a22e4eab704166bf3189d8e74e1e0ce4cf4725ef3e7f906b
+    name: toolbox
+    type: application
+    urls:
+    - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.1.0/toolbox-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-05-18T16:45:44.790379098Z"
