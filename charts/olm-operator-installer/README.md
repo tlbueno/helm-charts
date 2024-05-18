@@ -1,17 +1,18 @@
 # olm-operator-installer
 
-An helm chart to install an operator using Operator Lifecycle Manager (OLM)
+An helm chart to deploy an operator using Operator Lifecycle Manager (OLM).
 
 The chart will:
 - create a namespace
 - deploy an operator group with/without a selector label defined in the values
 - deploy the subscription
 
-By default, the chart deploy a cert-manager operator. But you can find some more examples in [examples](./examples) folder
+By default, the chart deploy a cert-manager operator but you may override the values to install other operators  .
+You can find some more examples in [examples](./examples) folder.
 
 ### How to use
 
-Check [README.md](../../README.md) for repo installation details
+Check [README.md](../../README.md) for repo installation details.
 
 To install the chart, ie:
 ```sh

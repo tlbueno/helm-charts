@@ -1,0 +1,20 @@
+# Default values for catalog-soruce-installer.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+catalogSource:
+  # catalog name
+  name: redhat-operators-catalog
+  # namespace where to install
+  namespace: olm
+  # source type
+  sourceType: grpc
+  # catalog index image
+  image: registry.redhat.io/redhat/redhat-operator-index:v4.16
+  # catalog display name
+  displayName: Redhat Operators Catalog
+  # publisher
+  published: RedHat
+  # update interval
+  updateInterval: 15m
+

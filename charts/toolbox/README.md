@@ -1,6 +1,6 @@
 # toolbox
 
-An helm chart to create a toolbox pod
+An helm chart to create a toolbox pod.
 
 The chart will:
 - create a namespace
@@ -8,7 +8,7 @@ The chart will:
 
 ### How to use
 
-Check [README.md](../../README.md) for repo installation details
+Check [README.md](../../README.md) for repo installation details.
 
 To install the chart, ie:
 ```sh

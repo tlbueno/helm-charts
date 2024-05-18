@@ -1,0 +1,14 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: {{ .Values.catalogSource.name }}
+  namespace: {{ .Values.catalogSource.namespace }}
+spec:
+  sourceType: {{ .Values.catalogSource.sourceType }}
+  image: {{ .Values.catalogSource.image }}
+  displayName: {{ .Values.catalogSource.displayName }}
+  publisher: {{ .Values.catalogSource.publisher }}
+  updateStrategy:
+    registryPoll:
+      interval: {{ .Values.catalogSource.updateInterval }}
+
