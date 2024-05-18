@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  catalog-source-installer:
+  - apiVersion: v2
+    appVersion: N/A
+    created: "2024-05-18T19:30:35.854866008Z"
+    description: A Helm chart to deploy a catalog source
+    digest: 7b3924b2659fb9af29fd1496a8abb2b501ce300af5c610bb956bc19087a102f9
+    name: catalog-source-installer
+    type: application
+    urls:
+    - https://github.com/tlbueno/helm-charts/releases/download/catalog-source-installer-0.1.0/catalog-source-installer-0.1.0.tgz
+    version: 0.1.0
   olm-operator-installer:
   - apiVersion: v2
     appVersion: N/A
@@ -42,4 +53,4 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.1.0/toolbox-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-18T17:47:13.753850453Z"
+generated: "2024-05-18T19:30:36.058265859Z"
