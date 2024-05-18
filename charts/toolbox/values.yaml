@@ -1,0 +1,12 @@
+# Default values for toolbox.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace:
+  # namespace name
+  name: tools
+
+container:
+  # image to be used in the pod
+  image: quay.io/tlbueno/toolbox:latest
+
