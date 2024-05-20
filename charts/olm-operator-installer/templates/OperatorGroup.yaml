@@ -5,12 +5,18 @@ metadata:
   name: {{ .Values.operatorGroup.name }}
   namespace: {{ .Values.namespace.name }}
 spec:
-{{- if .Values.operatorGroup.selector.enabled }}
+  {{- if .Values.operatorGroup.selector.enabled }}
   selector:
     matchLabels:
     {{- range .Values.operatorGroup.selector.matchLabels }}
       {{ .name }}: {{ tpl .value $ }}
     {{- end }}
-{{- end }}
+  {{- end }}
+  {{- if .Values.operatorGroup.targetNamespaces.enabled }}
+  targetNamespaces:
+  {{- range .Values.operatorGroup.targetNamespaces.names }}
+    - {{ . }}
+  {{- end }}
+  {{- end }}
 {{- end }}
 

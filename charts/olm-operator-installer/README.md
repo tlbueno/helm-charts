@@ -40,6 +40,10 @@ operatorGroup:
   # operator group name
   name: cert-manager-operator
 
+  ###########################################################
+  # You may enable selector or targetNamespace but not both #
+  ###########################################################
+  
   selector:
     # do not set selector matchLabels if false
     enabled: false
@@ -47,6 +51,15 @@ operatorGroup:
     matchLabels:
       - name: olm-operator-installer/managed-by
         value: "{{ .Values.subscription.name }}"
+
+  targetNamespaces:
+    # do not set target namespaces if false
+    enabled: false
+    # A list of namespaces names to watch
+    # namespaces should be created before the operator deployment otherwise the operator
+    # could report errors on trying to access the namespace resources
+    name:
+      - my-example-namespaces 
 
 subscription:
   # subscription name
