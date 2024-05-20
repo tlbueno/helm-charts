@@ -20,7 +20,7 @@ operatorGroup:
 
   selector:
     # do not set selector matchLabels if false
-    enabled: true
+    enabled: false
     # A list of maps with the labels
     matchLabels:
       - name: olm-operator-installer/managed-by
