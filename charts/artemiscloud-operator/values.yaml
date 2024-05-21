@@ -1,6 +1,19 @@
-# Default values for olm-operator-installer.
+# Default values for artemiscloud-operator.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
+
+# If true it will deploy the dependency chart artemiscloud-operator-crds
+# If false it will skip the dependency install. In this case the CRD must be already installed
+# Setting this as false and installing the artemiscloud-operator-crds before
+# will let you manage the CRD versions in a different helm release, so, in this case
+# you can have different versions of the operator at the same time.
+# as an example, you can install artemiscloud-operator-crds for operator 1.2.1,
+# then install the artemiscloud-operator for operator 1.2.1,
+# then install the artemiscloud-operator for operator 1.1.0 in a different namespace
+# as the CRDs have backward compatibility and you installed the latest one,
+# you can have multiple operator versions at the same time but you need to ensure they are
+# watching specific namespaces otherwise it can have unexpected behavior
+install_crds: true
 
 namespace:
   # namespace where the operator will be installed

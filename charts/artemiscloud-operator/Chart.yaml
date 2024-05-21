@@ -35,4 +35,5 @@ dependencies:
 # This is needed because it must be a match of the operator CRD
     version: "0.2.1" 
     repository: https://tlbueno.github.io/helm-charts
+    condition: install_crds
 
