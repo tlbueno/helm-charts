@@ -24,7 +24,7 @@ helm install my-catalog-source-chart -f ./my-values.yaml tlbueno/catalog-source-
 
 Default values:
 ```yaml
-# Default values for catalog-soruce-installer.
+# Default values for catalog-source-installer.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
