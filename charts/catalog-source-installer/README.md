@@ -43,6 +43,5 @@ catalogSource:
   published: RedHat
   # update interval
   updateInterval: 15m
-
 ```
 
