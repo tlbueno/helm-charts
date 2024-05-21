@@ -1,0 +1,20 @@
+# Default values for olm-operator-installer.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace:
+  # namespace where the operator will be installed
+  name: artemiscloud-operator
+
+operator:
+  watch:
+    # operator watch namespace mode
+    # expected one of the values:
+    #   single: operator will watch only its own namespace
+    #   multi: operator will watch the ones specified in namespaces below
+    #   all: operator will watch all namespaces
+    mode: all
+    # list of namespaces to watch in case of multi namespace mode
+    namespaces:
+      # - my-sample-namespace
+
