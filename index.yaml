@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   amq-broker-operator-crds:
   - apiVersion: v2
+    appVersion: 7.12.0.OPR.1
+    created: "2024-05-22T01:17:05.168005299Z"
+    description: A Helm chart to install AMQ Broker Operator CRDs
+    digest: adc2ecb7ca95718ff517dcbead9d9f6cbea66dd2c1b2f501158944b6fee586aa
+    name: amq-broker-operator-crds
+    type: application
+    urls:
+    - https://github.com/tlbueno/helm-charts/releases/download/amq-broker-operator-crds-0.2.0/amq-broker-operator-crds-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 7.11.6.OPR.2
     created: "2024-05-22T01:08:17.23387497Z"
     description: A Helm chart to install AMQ Broker Operator CRDs
@@ -168,4 +178,4 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.1.0/toolbox-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-22T01:08:17.233915857Z"
+generated: "2024-05-22T01:17:05.168041056Z"
