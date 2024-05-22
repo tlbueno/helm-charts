@@ -4,6 +4,8 @@ An collections of helm chart
 
 ### Usage
 
+The current repo charts can be viewed in [charts](charts)
+
 [Helm](https://helm.sh) must be installed to use the charts.  
 Please refer to Helm's [documentation](https://helm.sh/docs) to get started.
 
