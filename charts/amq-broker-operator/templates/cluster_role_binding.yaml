@@ -11,3 +11,5 @@ subjects:
 - kind: ServiceAccount
   name: amq-broker-controller-manager
   namespace: {{ .Values.namespace.name }}
+{{- end }}
+
