@@ -21,6 +21,19 @@ You may override the default values below by creating a yaml file with one or mo
 helm install my-artemiscloud-operator -f ./my-values.yaml tlbueno/artemiscloud-operator
 ```
 
+You can use the helm command below to list the available chars versions and apps versions
+```sh
+helm search repo tlbueno/artemiscloud-operator --versions
+```
+
+In the list below you can see that chart version 0.2.1 is related to app version 1.2.1 which is the version of the operator that chart install
+```sh
+NAME                              	CHART VERSION	APP VERSION	DESCRIPTION                                       
+tlbueno/artemiscloud-operator     	0.2.1        	1.2.1      	A Helm chart to install ArtemisCloud Operator     
+tlbueno/artemiscloud-operator     	0.2.0        	1.2.0      	A Helm chart to install ArtemisCloud Operator     
+tlbueno/artemiscloud-operator     	0.1.0        	1.1.0      	A Helm chart to install ArtemisCloud Operator   
+```
+
 Default values:
 ```yaml
 # Default values for artemiscloud-operator.
