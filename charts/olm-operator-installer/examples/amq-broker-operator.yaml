@@ -40,7 +40,7 @@ subscription:
   name: amq-broker-operator-olm-sub
 
   # channel name
-  channel: 7.11.x
+  channel: 7.12.x
 
   # operator package name
   operatorName: amq-broker-rhel8
