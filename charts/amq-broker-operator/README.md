@@ -50,10 +50,6 @@ Default values:
 # watching specific namespaces otherwise it can have unexpected behavior
 install_crds: true
 
-namespace:
-  # namespace where the operator will be installed
-  name: amq-broker-operator
-
 operator:
   watch:
     # operator watch namespace mode
