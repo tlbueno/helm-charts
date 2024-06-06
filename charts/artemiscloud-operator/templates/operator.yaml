@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - args:
-        - --zap-log-level=info
+        - --zap-log-level={{ .Values.operator.logLevel }}
         - --zap-encoder=console
         - --zap-time-encoding=iso8601
         - --leader-elect
