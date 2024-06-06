@@ -235,6 +235,16 @@ entries:
   olm-operator-installer:
   - apiVersion: v2
     appVersion: N/A
+    created: "2024-06-06T18:28:11.208142532Z"
+    description: A Helm chart to install an Operator Lifecycle Manager (OLM) operator
+    digest: faa2be5180c71246aad3cf4fe56370fb5b8dfb8da8349f89b018ef5cfb85c7e6
+    name: olm-operator-installer
+    type: application
+    urls:
+    - https://github.com/tlbueno/helm-charts/releases/download/olm-operator-installer-0.1.2/olm-operator-installer-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: N/A
     created: "2024-05-20T02:31:18.506196471Z"
     description: A Helm chart to install an Operator Lifecycle Manager (OLM) operator
     digest: 7b3009f646ff9235be7732614045e8d613a0dd6c224a36f8f1d9a5aa7360a491
@@ -304,4 +314,4 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.1.0/toolbox-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-06T17:49:59.946014987Z"
+generated: "2024-06-06T18:28:11.208201216Z"
