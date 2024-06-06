@@ -12,4 +12,10 @@ spec:
   {{- if .Values.subscription.startingCSV }}
   startingCSV: {{ .Values.subscription.startingCSV }}
   {{- end }}
-
+  {{- if .Values.subscription.config }}
+  config:
+    {{- if .Values.subscription.config.env }}
+    env:
+      {{- .Values.subscription.config.env | toYaml | nindent 4 }}
+    {{- end }}
+  {{- end }}

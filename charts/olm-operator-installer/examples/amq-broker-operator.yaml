@@ -58,3 +58,8 @@ subscription:
   # if empty it will not be used in the subscription 
   startingCSV: ""
 
+  config:
+    env:
+      # Set operator log level
+      - name: ARGS
+        value: "--zap-log-level=info"

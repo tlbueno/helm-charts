@@ -83,5 +83,10 @@ subscription:
   # the initial version of the operator to be installed
   # if empty it will not be used in the subscription 
   startingCSV: ""
+
+  #config:
+  #  env:
+  #    - name: ENV_VAR_TO_BE_ADDED
+  #      value: ENV_VAR_VALUE
 ```
 
