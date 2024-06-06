@@ -13,9 +13,12 @@
 # as the CRDs have backward compatibility and you installed the latest one,
 # you can have multiple operator versions at the same time but you need to ensure they are
 # watching specific namespaces otherwise it can have unexpected behavior
-install_crds: true
+installCrds: true
 
 operator:
+  # Operator log level
+  logLevel: info
+  
   watch:
     # operator watch namespace mode
     # expected one of the values:
