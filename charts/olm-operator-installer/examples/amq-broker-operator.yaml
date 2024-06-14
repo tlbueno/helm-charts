@@ -46,7 +46,7 @@ subscription:
   operatorName: amq-broker-rhel8
 
   # catalog name from which the operator will be installed
-  source: redhat-operators-catalog
+  source: redhat-operators
 
   # catalog namespace
   sourceNamespace: olm
