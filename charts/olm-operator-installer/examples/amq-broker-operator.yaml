@@ -49,7 +49,7 @@ subscription:
   source: redhat-operators
 
   # catalog namespace
-  sourceNamespace: olm
+  sourceNamespace: openshift-marketplace
 
   # install plan approval type
   installPlanApproval: Automatic
