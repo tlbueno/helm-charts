@@ -2,9 +2,13 @@ name: Release Charts
 
 on:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'branch'
+        required: true
   push:
     branches:
-      - main
+      - releases/**
 
 jobs:
   release:
@@ -14,9 +18,24 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - id: get_branch
+        name: Get Branch Name
+        run: |
+          if [[ github.event_name == 'push' ]]; then
+            echo "BRANCH_NAME=${{ github.ref }}" >> $GITHUB_OUTPUT
+          else
+            echo "BRANCH_NAME=${{ inputs.branch }}" >> $GITHUB_OUTPUT
+          fi
+
+      - id: show_branch
+        name: Show Branch Name
+        run: |
+            echo "${{ steps.get_branch.outputs.BRANCH_NAME }}"
+
+      - name: Checkout specific branch (if push or input provided)
         uses: actions/checkout@v4
         with:
+          ref: ${{ steps.get_branch.outputs.BRANCH_NAME }}
           fetch-depth: 0
 
       - name: Configure Git
@@ -39,3 +58,4 @@ jobs:
           skip_existing: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
