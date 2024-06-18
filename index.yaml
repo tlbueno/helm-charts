@@ -3,6 +3,21 @@ entries:
   amq-broker-operator:
   - apiVersion: v2
     appVersion: 7.12.0.OPR.2
+    created: "2024-06-18T14:14:31.919505972Z"
+    dependencies:
+    - condition: installCrds
+      name: amq-broker-operator-crds
+      repository: https://tlbueno.github.io/helm-charts
+      version: 0.2.1
+    description: A Helm chart to install AMQ Broker Operator
+    digest: d8a3994f2eb30e24f8818a3825c80dc2a804beb5e497da8ba68fd70b62d6b99e
+    name: amq-broker-operator
+    type: application
+    urls:
+    - https://github.com/tlbueno/helm-charts/releases/download/amq-broker-operator-0.2.4/amq-broker-operator-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v2
+    appVersion: 7.12.0.OPR.2
     created: "2024-06-18T14:10:26.70025981Z"
     dependencies:
     - condition: installCrds
@@ -339,4 +354,4 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.1.0/toolbox-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-18T14:12:04.523135466Z"
+generated: "2024-06-18T14:14:31.919558891Z"
