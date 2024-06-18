@@ -2,9 +2,10 @@ name: Release Charts
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+    inputs:
+      branch:
+        description: 'branch'
+        required: true
 
 jobs:
   release:
@@ -17,6 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: "${{ github.event.inputs.branch }}"
           fetch-depth: 0
 
       - name: Configure Git
