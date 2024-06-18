@@ -1,6 +1,6 @@
 dependencies:
 - name: amq-broker-operator-crds
   repository: https://tlbueno.github.io/helm-charts
-  version: 0.2.0
-digest: sha256:94070a60a54683b11b17a9970e2dc1cf4ce2b4b3f944671982d38f8ae52cc983
-generated: "2024-06-06T14:48:51.62529105-03:00"
+  version: 0.2.1
+digest: sha256:8cd2963df556534049cfe3cdc4bedef2379d057109d4f845221c2dfa4a5506b3
+generated: "2024-06-18T11:13:25.02105144-03:00"
