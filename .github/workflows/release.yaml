@@ -6,6 +6,9 @@ on:
       branch:
         description: 'branch'
         required: true
+  push:
+    branches:
+      - 'releases/**'
 
 jobs:
   release:
@@ -15,11 +18,28 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - id: get_branch
+        name: Get Branch Name
+        run: |
+          if [[ github.event.name == 'push' ]]; then
+            echo "::set-output name=BRANCH_NAME ${{ github.ref }}"
+          else
+            echo "::set-output name=BRANCH_NAME ${{ github.event.inputs.branch }}"
+          fi
+
+      - name: Check branch name (optional input)
+        run: |
+          if [[ -z "${{ github.event.inputs.branch }}" ]]; then
+            echo "Branch name not provided as input. Failing workflow."
+            exit 1
+          fi
+
+      - name: Checkout specific branch (if push or input provided)
         uses: actions/checkout@v4
         with:
-          ref: "${{ github.event.inputs.branch }}"
+          ref: ${{ steps.get_branch.outputs.BRANCH_NAME }}
           fetch-depth: 0
+        if: steps.get_branch.outputs.BRANCH_NAME 
 
       - name: Configure Git
         run: |
@@ -41,3 +61,4 @@ jobs:
           skip_existing: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
