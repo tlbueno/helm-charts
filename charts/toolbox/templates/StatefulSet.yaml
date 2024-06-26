@@ -17,4 +17,5 @@ spec:
       containers:
       - name: toolbox-container
         image: {{ .Values.container.image }}
+        imagePullPolicy: Always
 
