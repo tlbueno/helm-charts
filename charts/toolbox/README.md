@@ -4,7 +4,7 @@ An helm chart to create a toolbox pod.
 
 The chart will:
 - create a namespace
-- deploy a pod with the specified image
+- deploy a statefulset with 1 replica with the specified image
 
 ### How to use
 
