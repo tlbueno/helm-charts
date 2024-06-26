@@ -331,6 +331,16 @@ entries:
   toolbox:
   - apiVersion: v2
     appVersion: latest
+    created: "2024-06-26T15:25:48.926019971Z"
+    description: A Helm chart to deploy a stateful set with a toolbox image
+    digest: 16730d2cd94ad52a3406f5ecdffe8de7516e80582bbcc4740d253694a6ea32ac
+    name: toolbox
+    type: application
+    urls:
+    - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.2.0/toolbox-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2024-05-28T02:10:09.274940213Z"
     description: A Helm chart to deploy a pod with a toolbox image
     digest: 8051108c30eaaf4aee95577c87c12a6a89326a4238a6aafbfac79cab2b09fc4f
@@ -379,4 +389,4 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.1.0/toolbox-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-18T22:40:41.125571416Z"
+generated: "2024-06-26T15:25:48.926108835Z"
