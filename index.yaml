@@ -283,6 +283,16 @@ entries:
   artemiscloud-operator-crds:
   - apiVersion: v2
     appVersion: 1.2.5
+    created: "2024-10-10T13:00:30.321355903Z"
+    description: A Helm chart to install ArtemisCloud Operator CRDs
+    digest: f8ca7f70455bb78a27779c19d8f2720c3823b520678fb334699fbcd60d1b52f6
+    name: artemiscloud-operator-crds
+    type: application
+    urls:
+    - https://github.com/tlbueno/helm-charts/releases/download/artemiscloud-operator-crds-1.2.5/artemiscloud-operator-crds-1.2.5.tgz
+    version: 1.2.5
+  - apiVersion: v2
+    appVersion: 1.2.5
     created: "2024-10-08T21:06:59.793064739Z"
     description: A Helm chart to install ArtemisCloud Operator CRDs
     digest: 31b665c835f6ddabe3e396adcb37a2f3851ceb132c182c49f0da144efbaa0ad0
@@ -474,4 +484,4 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.1.0/toolbox-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-08T21:13:15.128499931Z"
+generated: "2024-10-10T13:00:30.481816572Z"
