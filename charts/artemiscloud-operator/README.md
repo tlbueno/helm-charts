@@ -33,6 +33,7 @@ tlbueno/artemiscloud-operator     	0.2.1        	1.2.1      	A Helm chart to ins
 tlbueno/artemiscloud-operator     	0.2.0        	1.2.0      	A Helm chart to install ArtemisCloud Operator     
 tlbueno/artemiscloud-operator     	0.1.0        	1.1.0      	A Helm chart to install ArtemisCloud Operator   
 ```
+* From version 1.2.5 chart version and app version will match. This means, chart version 1.2.5 will install operator version 1.2.5
 
 Default values:
 ```yaml
