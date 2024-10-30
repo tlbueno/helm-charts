@@ -1,6 +1,6 @@
 dependencies:
 - name: artemiscloud-operator-crds
   repository: https://tlbueno.github.io/helm-charts
-  version: 1.2.5
-digest: sha256:c062cd9955aab1e040b87fb6b98a62e548f4156d208a83442c642a7970c9d783
-generated: "2024-10-10T10:03:14.698818438-03:00"
+  version: 1.2.6
+digest: sha256:b376afa3b05b5a3f506aeb7df67e84152e672ced29602ac35488c9c08d37d35a
+generated: "2024-10-30T14:53:02.853247051-03:00"
