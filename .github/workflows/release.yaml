@@ -1,5 +1,7 @@
+---
 name: Release Charts
 
+# yamllint disable-line rule:truthy
 on:
   workflow_dispatch:
   push:
@@ -9,64 +11,58 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
-
     steps:
-      - id: get_branch
-        name: Get Branch Name
-        run: |
-          if [[ github.event_name == 'push' ]]; then
-            echo "BRANCH_NAME=${{ github.ref }}" >> $GITHUB_OUTPUT
-          else
-            echo "BRANCH_NAME=${{ inputs.branch }}" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Checkout specific branch (if push or input provided)
+      - name: Checkout branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ steps.get_branch.outputs.BRANCH_NAME }}
+          ref: ${{ github.ref }}
           fetch-depth: 0
-
       - name: Configure Git
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-
       - name: Install Helm
         uses: azure/setup-helm@v4
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
       - name: Add repositories
         run: |
           helm repo add tlbueno https://tlbueno.github.io/helm-charts
-
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
         with:
           skip_existing: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
       - name: Update release notes
         run: |
           set -x -e -o pipefail
 
-          TAG=${${{ steps.get_branch.outputs.BRANCH_NAME }}#releases/}"
-          RELEASE_DATA=$(curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" "https://api.github.com/repos/${{ github.repository }}/releases/tags/${TAG}")
+          REPO_URL="https://api.github.com/repos/${{ github.repository }}"
+          FULL_TAG="${{ github.ref }}"
+          TAG="${FULL_TAG##*releases/}"
+
+          RELEASE_DATA=$(curl -L -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "${REPO_URL}/releases/tags/${TAG}")
+
           CURRENT_NOTES=$(echo "$RELEASE_DATA" | jq -r '.body')
+
           RELEASE_ID=$(echo "$RELEASE_DATA" | jq -r '.id')
 
-          AUTO_NOTES=$(curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" -X POST https://api.github.com/repos/${{ github.repository }}/releases/generate-notes \
+          AUTO_NOTES=$(curl -L -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            -X POST ${REPO_URL}/releases/generate-notes \
             -d "{\"tag_name\": \"${TAG}\"}" | jq -r '.body')
 
           COMBINED_NOTES="${CURRENT_NOTES}\n\n${AUTO_NOTES}"
 
-          curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "X-GitHub-Api-Version: 2022-11-28" X PATCH "https://api.github.com/repos/${{ github.repository }}/releases/$RELEASE_ID" \
+          curl -L -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            -X PATCH "${REPO_URL}/releases/$RELEASE_ID" \
             -d "{\"body\": \"$COMBINED_NOTES\"}"
-
