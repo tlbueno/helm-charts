@@ -172,6 +172,17 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/amq-broker-operator-crds-0.1.0/amq-broker-operator-crds-0.1.0.tgz
     version: 0.1.0
+  arkmq-operator-crds:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2025-03-06T17:01:08.229440991Z"
+    description: A Helm chart to install ArkMQ Operator CRDs
+    digest: cb32f6a94d25d166cec50dc7e455264b7aa6ae0bb1503c81151d15618b901eab
+    name: arkmq-operator-crds
+    type: application
+    urls:
+    - https://github.com/tlbueno/helm-charts/releases/download/arkmq-operator-crds-2.0.0/arkmq-operator-crds-2.0.0.tgz
+    version: 2.0.0
   artemiscloud-operator:
   - apiVersion: v2
     appVersion: 1.2.6
@@ -569,4 +580,4 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.1.0/toolbox-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-06T14:16:55.342726777Z"
+generated: "2025-03-06T17:01:08.790143012Z"
