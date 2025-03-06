@@ -15,7 +15,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.2.1
+version: 0.2.2
 
 #########################################################
 ### ATTENTION ATTENTION ATTENTION ATTENTION ATTENTION ###
@@ -24,4 +24,4 @@ version: 0.2.1
 #########################################################
 # The app version needs to in match with the operator version where the CRDs
 # where consumed from because the amq-broker-operator chart depends on this chart
-appVersion: "7.12.0.OPR.2"
+appVersion: "7.12.3.OPR.1"
