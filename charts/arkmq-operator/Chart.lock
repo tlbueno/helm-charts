@@ -1,0 +1,6 @@
+dependencies:
+- name: arkmq-operator-crds
+  repository: https://tlbueno.github.io/helm-charts
+  version: 2.0.0
+digest: sha256:0cb87a30c461421e310942d65c7eee2c46e1e6565707fc1aef8371e42e154978
+generated: "2025-03-06T14:19:52.170748971-03:00"
