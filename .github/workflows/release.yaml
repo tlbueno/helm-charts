@@ -31,7 +31,7 @@ jobs:
         run: |
           helm repo add tlbueno https://tlbueno.github.io/helm-charts
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.6.0
+        uses: helm/chart-releaser-action@v1.7.0
         with:
           skip_existing: true
         env:
