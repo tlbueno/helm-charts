@@ -1,7 +1,7 @@
 ---
 apiVersion: v2
-name: artemiscloud-operator-crds
-description: A Helm chart to install ArtemisCloud Operator CRDs
+name: arkmq-operator-crds
+description: A Helm chart to install ArkMQ Operator CRDs
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -18,7 +18,7 @@ type: application
 # time you make changes to the chart and its templates, including the app
 # version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.2.7
+version: 2.0.0
 
 #########################################################
 ### ATTENTION ATTENTION ATTENTION ATTENTION ATTENTION ###
@@ -26,6 +26,6 @@ version: 1.2.7
 ### ATTENTION ATTENTION ATTENTION ATTENTION ATTENTION ###
 #########################################################
 # The app version needs to in match with the operator version where the CRDs
-# where consumed from because the artemiscloud-operator chart depends on this
+# where consumed from because the arkmq-operator chart depends on this
 # chart
-appVersion: "1.2.7"
+appVersion: "2.0.0"
