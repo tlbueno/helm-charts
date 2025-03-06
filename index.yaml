@@ -439,6 +439,16 @@ entries:
   catalog-source-installer:
   - apiVersion: v2
     appVersion: N/A
+    created: "2025-03-06T14:16:55.216601529Z"
+    description: A Helm chart to deploy a catalog source
+    digest: 18839a7fbcc615bf1b0ed00f0e624048fb5cd189cf82ef1e6834a65abe09be67
+    name: catalog-source-installer
+    type: application
+    urls:
+    - https://github.com/tlbueno/helm-charts/releases/download/catalog-source-installer-0.1.2/catalog-source-installer-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: N/A
     created: "2024-05-21T17:28:19.906607775Z"
     description: A Helm chart to deploy a catalog source
     digest: e788e99730220367e877940a9b73c937d02da803f1c2ca5ffe9d53901a70857b
@@ -559,4 +569,4 @@ entries:
     urls:
     - https://github.com/tlbueno/helm-charts/releases/download/toolbox-0.1.0/toolbox-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-06T13:59:17.368301345Z"
+generated: "2025-03-06T14:16:55.342726777Z"
